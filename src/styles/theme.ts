@@ -5,6 +5,10 @@ const colors = {
   white: '#FFFFFF',
 };
 
-export const theme: DefaultTheme = {
+const theme: DefaultTheme = {
   colors,
 };
+
+export type Theme = typeof theme;
+
+export default theme;

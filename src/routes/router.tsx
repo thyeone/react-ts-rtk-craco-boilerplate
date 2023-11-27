@@ -1,6 +1,6 @@
 import Layout from '@components/common/Layout';
-import Home from '@pages/home';
-import { Outlet, createBrowserRouter } from 'react-router-dom';
+import Home from '@pages/Home';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const Root = () => {
   return (
@@ -16,8 +16,12 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    children: [{ path: 'home', element: <Home /> }],
+    children: [{ index: true, element: <Home /> }],
   },
 ]);
 
-export default router;
+const Router = () => {
+  return <RouterProvider router={router} />;
+};
+
+export default Router;
